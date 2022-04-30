@@ -45,8 +45,11 @@
         <div class="pokemon-container"></div>
 
         <script id="pokemon-template" type="text/x-handlebars-template">
-          <img class='pokemon-image' src='{{this.img}}' alt='' />
-          <div class='pokemon-text'>Favorite Pokemon: {{this.name}}</div>
+          <img class='pokemon-image' src='{{this.img}}' alt='pokemon image' />
+        </script>
+
+        <script id="pokemon-name-template" type="text/x-handlebars-template">
+          <div class='pokemon-text'>Favorite Pokemon: {{this.pokemonName}}</div>
         </script>
 
         <div class="meat-container"></div>

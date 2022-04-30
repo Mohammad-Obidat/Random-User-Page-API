@@ -40,6 +40,14 @@ class Renderer {
     $('.pokemon-container').append(pokemonHTML);
   }
 
+  properCasePokemonName(name) {
+    let pokemonNameSource = $('#pokemon-name-template').html();
+    let pokemonNameTemplate = Handlebars.compile(pokemonNameSource);
+    let pokemonName = name.charAt(0).toUpperCase() + name.slice(1);
+    let pokemonNameHTML = pokemonNameTemplate({ pokemonName });
+    $('.pokemon-container').append(pokemonNameHTML);
+  }
+
   textRender(text) {
     let textSource = $('#meat-template').html();
     let textTemplate = Handlebars.compile(textSource);

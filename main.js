@@ -13,5 +13,6 @@ const displayUser = () => {
   renderer.friendsRender(api.data.users);
   renderer.quoteRender(api.data.quote);
   renderer.pokemonRender(api.data.pokemon);
+  renderer.properCasePokemonName(api.data.pokemon.name);
   renderer.textRender(api.data.text);
 };

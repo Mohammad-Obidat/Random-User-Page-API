@@ -11,6 +11,5 @@ class userInfoLocalStorage {
   loadUser() {
     let userInfo = localStorage.getItem('userInfo');
     this.users = JSON.parse(userInfo || '[]');
-    return this.users;
   }
 }

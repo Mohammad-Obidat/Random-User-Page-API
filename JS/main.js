@@ -19,9 +19,10 @@ const displayUser = () => {
 };
 
 const saveUserToLocalStorage = () => {
-  LS.saveUser(api.data);
+  LS.saveUser({ ...api.data });
+  renderer.dropdownRender(api.data.users);
 };
 
 const loadUserFromLocalStorage = () => {
-  renderer.loadUser(LS.loadUser());
+  renderer.loadUser(LS.users);
 };

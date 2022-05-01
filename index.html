@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   </head>
 
-  <body>
+  <div>
     <div class="container">
       <div class="user-container"></div>
 
@@ -85,7 +85,19 @@
           Load User Page
         </button>
       </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Choose a User</button>
+    <div class="dropdown-content">
+    <select id="dropdown-value" name="dropdown-names" >
+          </select>
+        </div>
+      </div>
     </div>
+  
+    <script id="dropdown-template" type="text/x-handlebars-template">
+    <option data-id="{{email}}">{{name.first}} {{name.last}} </option>
+    </script>
 
     <script src="Jquery/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>

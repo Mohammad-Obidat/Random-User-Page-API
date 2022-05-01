@@ -55,14 +55,27 @@ class Renderer {
     $('.meat-container').append(textHTML);
   }
 
-  loadUser(users) {
+  dropdownRender(user) {
+    let dropdownUserSource = $('#dropdown-template').html();
+    let dropdownUserTemplate = Handlebars.compile(dropdownUserSource);
+    let dropdownUserHTML = dropdownUserTemplate(user[0]);
+    $('#dropdown-value').append(dropdownUserHTML);
+  }
+
+  loadUser(usersArr) {
     this.clear();
-    let lastUser = users.slice(-1)[0];
-    this.userRender(lastUser.users);
-    this.friendsRender(lastUser.users);
-    this.quoteRender(lastUser.quote);
-    this.pokemonImageRender(lastUser.pokemon.img);
-    this.properCasePokemonName(lastUser.pokemon.name);
-    this.textRender(lastUser.text);
+    let value = $('#dropdown-value option:selected').data('id');
+    usersArr.map((u) => {
+      if (u.users[0].email === value) {
+        this.userRender(u.users);
+        this.friendsRender(u.users);
+        this.quoteRender(u.quote);
+        this.pokemonImageRender(u.pokemon.img);
+        this.properCasePokemonName(u.pokemon.name);
+        this.textRender(u.text);
+      } else {
+        alert('Uh oh, something has gone wrong.');
+      }
+    });
   }
 }

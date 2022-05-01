@@ -73,8 +73,6 @@ class Renderer {
         this.pokemonImageRender(u.pokemon.img);
         this.properCasePokemonName(u.pokemon.name);
         this.textRender(u.text);
-      } else {
-        alert('Uh oh, something has gone wrong.');
       }
     });
   }

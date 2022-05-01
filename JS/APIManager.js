@@ -38,7 +38,7 @@ class APIManager {
     $.ajax({
       url: 'https://baconipsum.com/api/?type=all-meat',
       dataType: 'json',
-      success: (t) => (this.data.text = t),
+      success: (t) => (this.data.text = t[0]),
       error: 'Uh oh, something has gone wrong.',
     });
   }

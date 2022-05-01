@@ -44,7 +44,7 @@
       <div class="content-container">
         <div class="pokemon-container"></div>
 
-        <script id="pokemon-template" type="text/x-handlebars-template">
+        <script id="pokemon-img-template" type="text/x-handlebars-template">
           <img class='pokemon-image' src='{{this.img}}' alt='pokemon image' />
         </script>
 
@@ -78,13 +78,20 @@
       <div class="buttons">
         <button type="button" onclick="loadUser()">Load User Data</button>
         <button type="button" onclick="displayUser()">Display User</button>
+        <button type="button" onclick="saveUserToLocalStorage()">
+          Save User Page
+        </button>
+        <button type="button" onclick="loadUserFromLocalStorage()">
+          Load User Page
+        </button>
       </div>
     </div>
 
     <script src="Jquery/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
-    <script src="Renderer.js"></script>
-    <script src="APIManager.js"></script>
-    <script src="main.js"></script>
+    <script src="./JS/Renderer.js"></script>
+    <script src="./JS/APIManager.js"></script>
+    <script src="./JS/localStorage.js"></script>
+    <script src="./JS/main.js"></script>
   </body>
 </html>

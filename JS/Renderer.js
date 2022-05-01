@@ -33,11 +33,11 @@ class Renderer {
     $('.quote-container').append(quoteHTML);
   }
 
-  pokemonRender(pokemon) {
-    let pokemonSource = $('#pokemon-template').html();
-    let pokemonTemplate = Handlebars.compile(pokemonSource);
-    let pokemonHTML = pokemonTemplate(pokemon);
-    $('.pokemon-container').append(pokemonHTML);
+  pokemonImageRender(img) {
+    let pokemonImageSource = $('#pokemon-img-template').html();
+    let pokemonImageTemplate = Handlebars.compile(pokemonImageSource);
+    let pokemonImageHTML = pokemonImageTemplate({ img });
+    $('.pokemon-container').append(pokemonImageHTML);
   }
 
   properCasePokemonName(name) {
@@ -51,7 +51,18 @@ class Renderer {
   textRender(text) {
     let textSource = $('#meat-template').html();
     let textTemplate = Handlebars.compile(textSource);
-    let textHTML = textTemplate(text[0]);
+    let textHTML = textTemplate(text);
     $('.meat-container').append(textHTML);
+  }
+
+  loadUser(users) {
+    this.clear();
+    let lastUser = users.slice(-1)[0];
+    this.userRender(lastUser.users);
+    this.friendsRender(lastUser.users);
+    this.quoteRender(lastUser.quote);
+    this.pokemonImageRender(lastUser.pokemon.img);
+    this.properCasePokemonName(lastUser.pokemon.name);
+    this.textRender(lastUser.text);
   }
 }

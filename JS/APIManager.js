@@ -43,4 +43,3 @@ class APIManager {
     });
   }
 }
-let api2 = new APIManager();
